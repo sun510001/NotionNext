@@ -42,19 +42,6 @@ const CommonHead = ({ meta, children }) => {
             <meta name="twitter:description" content={description} />
             <meta name="twitter:title" content={title} />
 
-            {/* 预加载字体 */}
-            {BLOG.FONT_AWESOME && <>
-                <link rel='preload' href={BLOG.FONT_AWESOME} as="style" crossOrigin="anonymous" />
-                <link rel="stylesheet" href={BLOG.FONT_AWESOME} crossOrigin="anonymous" referrerpolicy="no-referrer" />
-            </>}
-            {BLOG.FONT_URL?.map((fontUrl, index) => {
-              if (fontUrl.endsWith('.css')) {
-                return <link key={index} rel="stylesheet" href={fontUrl} />
-              } else {
-                return <link key={index} rel="preload" href={fontUrl} as="font" type="font/woff2" />
-              }
-            })}
-
             {BLOG.COMMENT_WEBMENTION.ENABLE && (
                 <>
                     <link rel="webmention" href={`https://webmention.io/${BLOG.COMMENT_WEBMENTION.HOSTNAME}/webmention`} />
@@ -71,7 +58,7 @@ const CommonHead = ({ meta, children }) => {
                 <>
                     <meta
                         property="article:published_time"
-                        content={meta.publishTime}
+                        content={meta.publishDay}
                     />
                     <meta property="article:author" content={BLOG.AUTHOR} />
                     <meta property="article:section" content={category} />
