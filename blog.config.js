@@ -126,7 +126,7 @@ const BLOG = {
 //   BACKGROUND_LIGHT: '#eeeeee', // use hex value, don't forget '#' e.g #fffefc
   BACKGROUND_LIGHT: '#28282a',
 //   BACKGROUND_DARK: '#000000', // use hex value, don't forget '#'
-  BACKGROUND_DARK: '#111827',
+  BACKGROUND_DARK: '#057f8d',
   SUB_PATH: '', // leave this empty unless you want to deploy in a folder
 
   POST_SHARE_BAR_ENABLE: process.env.NEXT_PUBLIC_POST_SHARE_BAR || 'true', // 文章分享功能 ，将在底部显示一个分享条
