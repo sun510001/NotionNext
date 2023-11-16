@@ -28,7 +28,8 @@ class MyDocument extends Document {
                   })}
                 </Head>
 
-                <body className={`${BLOG.FONT_STYLE} font-light scroll-smooth`}>
+                {/* sqf: 文章字体粗细修改 font-light -> font-normal */}
+                <body className={`${BLOG.FONT_STYLE} font-normal scroll-smooth`}>
                     <Main />
                     <NextScript />
                 </body>

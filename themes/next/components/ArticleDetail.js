@@ -53,8 +53,7 @@ export default function ArticleDetail(props) {
                     </div>
 
                     {/* meta */}
-                    {/* sqf: 修改文章字体粗细, font-light -> font-normal */}
-                    <section className="mt-2 text-gray-400 dark:text-gray-400 font-normal leading-7 text-sm">
+                    <section className="mt-2 text-gray-400 dark:text-gray-400 font-light leading-7 text-sm">
                         <div className='flex flex-wrap justify-center'>
                             {post?.type !== 'Page' && (<>
                                 <Link
