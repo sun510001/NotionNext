@@ -34,7 +34,8 @@ export default function ArticleDetail(props) {
                 data-aos-duration="300"
                 data-aos-once="true"
                 data-aos-anchor-placement="top-bottom"
-                className="subpixel-antialiased overflow-y-hidden py-10 px-5 lg:pt-24 md:px-24  dark:border-gray-700 bg-white dark:bg-hexo-black-gray article-padding"
+                /* sqf: 这里修改文章背景颜色 bg-white dark:bg-hexo-black-gray*/
+                className="subpixel-antialiased overflow-y-hidden py-10 px-5 lg:pt-24 md:px-24 dark:border-gray-700 bg-white dark:bg-hexo-black-gray article-padding"
             >
 
                 {showArticleInfo && <header>
@@ -46,12 +47,14 @@ export default function ArticleDetail(props) {
                     )}
 
                     {/* title */}
-                    <div className=" text-center font-bold text-3xl text-black dark:text-white font-serif pt-6">
+                    {/* sqf: 将标题从衬线体改为无衬线体 font-serif -> font-sans */}
+                    <div className=" text-center font-bold text-3xl text-black dark:text-white font-sans pt-6">  
                         <NotionIcon icon={post.pageIcon} />{post.title}
                     </div>
 
                     {/* meta */}
-                    <section className="mt-2 text-gray-400 dark:text-gray-400 font-light leading-7 text-sm">
+                    {/* sqf: 修改文章字体粗细, font-light -> font-normal */}
+                    <section className="mt-2 text-gray-400 dark:text-gray-400 font-normal leading-7 text-sm">
                         <div className='flex flex-wrap justify-center'>
                             {post?.type !== 'Page' && (<>
                                 <Link

@@ -12,8 +12,7 @@ const Style = () => {
         background-color: #eeedee
     }
     .dark body{
-        // background-color: black;
-        background-color: red;
+        background-color: black;  // sqf: next背景色在这里!
     }
 
     .article-padding {
