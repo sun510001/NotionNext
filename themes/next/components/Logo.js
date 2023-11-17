@@ -10,7 +10,8 @@ const Logo = props => {
                     data-aos-duration="500"
                     data-aos-once="true"
                     data-aos-anchor-placement="top-bottom"
-                    className='font-serif text-xl text-white'> {siteConfig('TITLE')}</div>
+                    // sqf: logo部分字体修改 font-serif -> font-sans
+                    className='font-sans text-xl text-white'> {siteConfig('TITLE')}</div>
                 <div data-aos="fade-down"
                     data-aos-duration="500"
                     data-aos-delay="300"
