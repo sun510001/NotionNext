@@ -1,3 +1,13 @@
+/*
+ * @Author: Qifan Sun
+ * @Date: 2023-07-23 22:18:28
+ * @LastEditors: Qifan Sun
+ * @LastEditTime: 2023-11-20 15:09:35
+ * @FilePath: sitemap.xml.js
+ * @Description: 
+ * Copyright 2023 OBKoro1, All Rights Reserved. 
+ * 2023-07-23 22:18:28
+ */
 // pages/sitemap.xml.js
 import { getServerSideSitemap } from 'next-sitemap'
 import { getGlobalData } from '@/lib/notion/getNotionData'
@@ -13,6 +23,11 @@ export const getServerSideProps = async (ctx) => {
       lastmod: new Date().toISOString()
     }, {
       loc: `${BLOG.LINK}/archive`,
+      changefreq: 'daily',
+      priority: '0.7',
+      lastmod: new Date().toISOString()
+    }, {
+      loc: `${BLOG.LINK}/sitemap.xml`,
       changefreq: 'daily',
       priority: '0.7',
       lastmod: new Date().toISOString()
