@@ -15,27 +15,27 @@ export const getServerSideProps = async (ctx) => {
       loc: `${BLOG.LINK}/archive`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: new Date().toISOString()
     }, {
       loc: `${BLOG.LINK}/category`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: new Date().toISOString()
     }, {
       loc: `${BLOG.LINK}/feed`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: new Date().toISOString()
     }, {
       loc: `${BLOG.LINK}/search`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: new Date().toISOString()
     }, {
       loc: `${BLOG.LINK}/tag`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: new Date().toISOString()
     }
   ]
   const postFields = allPages?.filter(p => p.status === BLOG.NOTION_PROPERTY_NAME.status_publish)?.map(post => {
@@ -44,7 +44,7 @@ export const getServerSideProps = async (ctx) => {
       loc: `${BLOG.LINK}/${slugWithoutLeadingSlash}`,
       changefreq: 'daily',
       priority: '0.7',
-      lastmod: new Date(post?.publishDay).toISOString().split('T')[0]
+      lastmod: new Date(post?.publishDay).toISOString()
     }
   })
   const fields = defaultFields.concat(postFields)
