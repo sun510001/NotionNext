@@ -102,7 +102,9 @@ module.exports = withBundleAnalyzer({
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
     // 导出时 忽略/pages/sitemap.xml.js ， 否则报错getServerSideProps
     const pages = { ...defaultPathMap }
-    delete pages['/sitemap.xml']
+    // delete pages['/sitemap.xml']
+    // sqf change page name
+    delete pages['/sitemap_page_1.xml']
     return pages
   },
   publicRuntimeConfig: { // 这里的配置既可以服务端获取到，也可以在浏览器端获取到
