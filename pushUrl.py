@@ -14,9 +14,9 @@ QUOTA = 100
 
 
 def parse_stiemap(site):
-    # site = f'{site}/sitemap.xml'
+    site = f'{site}/sitemap.xml'
     # sqf change sitemap name
-    site = f'{site}/sitemap_page_1.xml'
+    # site = f'{site}/sitemap_page_1.xml'
     try:
         result = requests.get(site)
         big = re.findall('<loc>(.*?)</loc>', result.content.decode('utf-8'), re.S)
