@@ -15,17 +15,16 @@ QUOTA = 100
 
 def parse_stiemap(site):
     site = f'{site}/sitemap.xml'
-    # sqf change sitemap name
-    # site = f'{site}/sitemap_page_1.xml'
     try:
         result = requests.get(site)
         big = re.findall('<loc>(.*?)</loc>', result.content.decode('utf-8'), re.S)
         return list(big)
-    except:
+    except BaseException as e:
         print('请检查你的url是否有误。')
         print('正确的应是完整的域名，包含https://，且不包含‘sitemap.xml’, 如下所示：')
         print('正确的示例: https://ghlcode.cn')
         print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
+        print(e)
 
 
 
@@ -69,7 +68,7 @@ def push_to_baidu(site, urls, token):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='parse sitemap')
-    parser.add_argument('--url', type=str, default=None, help='The url of your website')
+    parser.add_argument('--url', type=str, default="https://www.sqf.icu", help='The url of your website')
     parser.add_argument('--bing_api_key', type=str, default=None, help='your bing api key')
     parser.add_argument('--baidu_token', type=str, default=None, help='Your baidu push token')
     args = parser.parse_args()
@@ -81,6 +80,7 @@ if __name__ == '__main__':
     if args.url:
         # 解析urls
         urls = parse_stiemap(args.url)
+        print(f"Get urls -> \n{urls}")
         if urls is not None:
             # 判断当前urls数量是否超过额度，若超过则取当日最大值，默认为100，可根据实际情况修改
             if len(urls) > QUOTA:
